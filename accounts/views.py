@@ -5,6 +5,7 @@ from django.utils.html import strip_tags
 from django.core.mail import EmailMultiAlternatives
 from .models import Contact, About, Skills, Testimonials, Services, Education, Experience, Portfolio, Gallery
 from system.models import ConfigChoice
+from django.conf import settings
 
 
 # Create your views here.
@@ -39,8 +40,7 @@ def ContactUS(request):
         subject = request.POST.get('cf_subject', "")
         phone = request.POST.get('cf_phone', "")
         description = request.POST.get('cf_description', "")
-        Contact.objects.create(first_name=first_name, last_name=last_name,email=sender,subject=subject,message=description)
-
+        Contact.objects.create(first_name=first_name, last_name=last_name,email=sender,phone=phone,subject=subject,message=description)
         messages.info(request, 'Successfully Submitted data')
         html_content = render_to_string("contact_us_mail_template.html",
                                         {'first_name': first_name,'last_name':last_name,
@@ -48,13 +48,13 @@ def ContactUS(request):
                                          "phone":phone,
                                          })
         test_contend = strip_tags(html_content)
-        email="bhuoneghimire@gmail.com"
+        email="bhubanghimire3130@gmail.com"
         email = EmailMultiAlternatives('Contact Us Mail', test_contend,  sender, [email])
         email.attach_alternative(html_content, 'text/html')
         try:
             email.send()
         except Exception as e:
-            pass
+            print(e)
         return redirect("home")
 
     else:
