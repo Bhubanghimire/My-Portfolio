@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-l7fmqcjb+82+1xs^o(6fv02o5tdud83n5v$(ps$ge%*5d)#-up
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ['https://*.bhubanghimire.com.np','https://*.127.0.0.1']
 
 
 # Application definition
@@ -133,6 +134,7 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_SHOW_URL = 'media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
