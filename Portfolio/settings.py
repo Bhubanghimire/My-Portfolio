@@ -140,11 +140,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_SHOW_URL = 'media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-<<<<<<< Updated upstream
 # STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"#add this line
-=======
->>>>>>> Stashed changes
+
 
 
 
