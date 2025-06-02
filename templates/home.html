@@ -57,7 +57,7 @@ body::before {
   }
 
 
-
+}
 
 
     </style>
@@ -69,7 +69,7 @@ body::before {
 <header id="header">
     <div class="container">
 
-        <h1><a href="{% url 'home' %}">{{ about.user.first_name}} {{ about.user.last_name}}</a></h1>
+        <h1><a href="{% url 'home' %}">BHUBAN GHIMIRE</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
 
         <h2>I'm a passionate <span>{{about.job_title}}</span> from Nepal.</h2>
@@ -112,7 +112,7 @@ body::before {
 
         <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
-                <img src="{{about.profile.url}}" class="img-fluid" alt="">
+                <img src={{about.profile.url}} class="img-fluid" alt="">
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
                 <h3>{{about.job_title}}</h3>
